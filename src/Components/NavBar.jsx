@@ -50,8 +50,8 @@ const NavBar = () => {
         }
       </ul>
     </div>
-   <Link to='/'> <a className="btn btn-ghost"><img className='w-[30px] lg:w-[40px]' src='/public/myLogo.png'></img>
-    <p className='font-bold text-[18px] lg:text-[22px]'>Give & Grow</p></a></Link>
+   <Link to='/'> <div className="btn btn-ghost"><img className='w-[30px] lg:w-[40px]' src='/public/myLogo.png'></img>
+    <p className='font-bold text-[18px] lg:text-[22px]'>Give & Grow</p></div></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">

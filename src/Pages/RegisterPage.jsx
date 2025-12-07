@@ -1,22 +1,45 @@
-import React from 'react';
 import { useForm } from 'react-hook-form';
-import { FcGoogle } from 'react-icons/fc';
 import { Link } from 'react-router';
 import UseAuth from '../Hooks/UseAuth';
 import SocialLogin from '../SocialLogIn/SocialLogin';
+import axios from 'axios';
 
 const RegisterPage = () => {
 
 const { register, handleSubmit, formState:{errors} } = useForm()
-const { registerUser } = UseAuth()
+const { registerUser, updateUserProfile } = UseAuth()
 
 const handleRegister = (data) => {
 
     // console.log(data)
+    const profileImg = data.photo[0];
+
     registerUser(data.email, data.password)
     .then((userCredential) => { 
     const user = userCredential.user;
     // console.log(user)
+    const formData= new FormData()
+    formData.append('image', profileImg)
+
+    const imgApiUrl = `https://api.imgbb.com/1/upload?key=${import.meta.env.VITE_imageHost}`
+
+    axios.post(imgApiUrl, formData)
+     .then(res => {
+    console.log('after upload', res.data.data.url);
+
+    const userProfile = {
+        displayName: data.name,
+        photoURL: res.data.data.url
+    }
+    updateUserProfile(userProfile)
+    .then(()=>{
+        console.log('user profile updated')
+    })
+    .catch(error => console.log(error))
+  })
+  .catch(err => {
+    console.error("Image upload error:", err.response?.data || err.message);
+  });
   })
   .catch((error) => {
     const errorCode = error.code;
