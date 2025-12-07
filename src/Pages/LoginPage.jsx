@@ -68,7 +68,7 @@ const LoginPage = () => {
 
     return (
         <div className='flex flex-col items-center justify-center mb-20 mt-10'>
-            <h2 className='text-2xl lg:text-3xl mb-3 font-bold text-white'>Login Now</h2> 
+            <h2 className='text-2xl lg:text-3xl mb-3 font-bold text-white'>Login Now!!</h2> 
         
             <form onSubmit={handleSubmit(handleLogin)}>
                 <div className='bg-white p-5 rounded-[10px] flex flex-col gap-3 shadow-2xl'>
@@ -115,14 +115,14 @@ const LoginPage = () => {
                         Forget Password?
                     </h4>
 
-                    <button className='w-sm bg-black text-white py-2 rounded-[10px]'>Log In</button>
+                    <button className='w-sm bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-[10px]'>Log In</button>
 
                     <SocialLogin />
 
                     <h4 className='text-center mt-2 font-semibold'>
                         Didn't have an account? 
                         <Link to='/register'>
-                            <span className='text-[#1F2B43]'> Register</span>
+                            <span className='text-blue-500'> Register</span>
                         </Link>
                     </h4>
                 </div>

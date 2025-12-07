@@ -12,3 +12,42 @@
   font-weight:weight;
   font-style: normal;
 }
+
+
+.type {
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #fff;
+  display: inline-block;
+  animation: typing 6s steps(var(--steps)) infinite, blink 0.7s infinite;
+  --steps: 30; 
+}
+@keyframes typing {
+  0% { width: 0; }
+  50% { width: 100%; }
+  100% { width: 0; }
+}
+@media (max-width: 640px) {
+  .type {
+    --steps: 22;          
+    animation-duration: 7s;
+    max-width: 85%;       
+  }
+}
+@media (min-width: 641px) and (max-width: 1023px) {
+  .type {
+    --steps: 28; 
+    animation-duration: 6.5s;
+    max-width: 100%;
+  }
+}
+@media (min-width: 1024px) {
+  .type {
+    --steps: 34;         
+    animation-duration: 7s; 
+    max-width: 100%;
+  }
+}
+@keyframes blink {
+  50% { border-color: transparent; }
+}

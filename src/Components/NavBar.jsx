@@ -19,16 +19,16 @@ const NavBar = () => {
   });
   }
 
-  const link = <>
+  const link = <div className='flex flex-col lg:flex-row gap-2'>
   
            <NavLink to=''><li>Donation Requests</li></NavLink>
             <li className=''>Funding Links</li>
             <li className=''></li>
   
-  </>
+  </div>
  
  const recognize = <div className='flex flex-col lg:flex-row gap-3'>
-     <Link to='/login'><button className='btn'>Log In</button></Link>
+     <Link to='/login'><button className='btn bg-blue-500 hover:bg-blue-600 text-white px-6 py-0 text-[12px] lg:text-[15px] lg:px-8 '>Log In</button></Link>
    </div>
 
 
@@ -61,7 +61,7 @@ const NavBar = () => {
   <div className="navbar-end hidden lg:flex">
    
    {
-    user ? <button onClick={handleLogOut} className='btn'>Log Out</button> : recognize
+    user ? <button onClick={handleLogOut} className='btn bg-white text-black border-4 border-black hover:bg-black hover:text-white px-6 py-0 text-[12px] lg:text-[15px] lg:px-8 '>Log Out</button> : recognize
    }
 
   </div>
