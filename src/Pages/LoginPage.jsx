@@ -4,11 +4,15 @@ import { Link } from 'react-router';
 import UseAuth from '../Hooks/UseAuth';
 import SocialLogin from '../SocialLogIn/SocialLogin';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useLocation } from 'react-router';
+import { useNavigate } from 'react-router';
 
 const LoginPage = () => {
 
     const { register, handleSubmit, formState:{errors} } = useForm();
     const { signInUser, sendResetOTP, verifyOTP } = UseAuth();
+    const location = useLocation();
+    const navigate = useNavigate();
 
     // Password show/hide
     const [showPassword, setShowPassword] = useState(false);
@@ -26,6 +30,7 @@ const LoginPage = () => {
         .then((userCredential) => { 
             const user = userCredential.user;
             console.log(user)
+            navigate(location?.state || '/')
         })
         .catch((error) => {
             const errorCode = error.code;
