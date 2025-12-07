@@ -32,7 +32,7 @@ const HomePage = () => {
 
         <div className="mt-6 flex flex-wrap gap-3 sm:gap-4">
           <Link
-            to=""
+            to="/joinAsADonor"
             className="
               bg-blue-600 hover:bg-blue-700
               text-white font-semibold

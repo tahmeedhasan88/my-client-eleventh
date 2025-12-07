@@ -4,6 +4,8 @@ import ErrorPage from "../Pages/ErrorPage";
 import HomePage from "../Pages/HomePage";
 import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
+import Donor from "../Pages/Donor";
+import PrivateRoute from "./PrivateRoute";
 
 
 
@@ -26,6 +28,11 @@ export const router = createBrowserRouter([
         {
             path:'/register',
             element:<RegisterPage></RegisterPage> , 
+
+        },
+        {
+            path:'/joinAsADonor',
+            element:<PrivateRoute><Donor></Donor></PrivateRoute> , 
 
         },
     ]
