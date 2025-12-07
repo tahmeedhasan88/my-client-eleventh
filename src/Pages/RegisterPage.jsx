@@ -29,7 +29,7 @@ const handleRegister = (data) => {
 
     return (
         <div className='flex flex-col items-center justify-center mb-20 mt-10'>
-            <h2 className='text-2xl lg:text-3xl mb-3 font-bold'>Register Now</h2> 
+            <h2 className='text-2xl lg:text-3xl mb-3 font-bold text-white'>Register Now</h2> 
         
         <form onSubmit={handleSubmit(handleRegister)}>
             <div className='bg-white p-5 shadow-2xl rounded-[10px] flex flex-col gap-3'>
@@ -45,7 +45,7 @@ const handleRegister = (data) => {
             <input type='text' {...register('photo')} placeholder='Photo Url' className='input w-sm'></input>
             <button className='w-sm bg-black text-white py-3 rounded-[10px] btn mt-2'>Register</button>
             <SocialLogin></SocialLogin>
-            <h4 className='text-center mt-2 font-semibold'>Already have an account? <Link to='/login'><span className='text-green-600'>Log In</span></Link> </h4>
+            <h4 className='text-center mt-2 font-semibold'>Already have an account? <Link to='/login'><span className='text-[#1F2B43]'>Log In</span></Link> </h4>
         </div>
         </form>
 

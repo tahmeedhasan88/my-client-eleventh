@@ -68,7 +68,7 @@ const LoginPage = () => {
 
     return (
         <div className='flex flex-col items-center justify-center mb-20 mt-10'>
-            <h2 className='text-2xl lg:text-3xl mb-3 font-bold'>Login Now</h2> 
+            <h2 className='text-2xl lg:text-3xl mb-3 font-bold text-white'>Login Now</h2> 
         
             <form onSubmit={handleSubmit(handleLogin)}>
                 <div className='bg-white p-5 rounded-[10px] flex flex-col gap-3 shadow-2xl'>
@@ -122,7 +122,7 @@ const LoginPage = () => {
                     <h4 className='text-center mt-2 font-semibold'>
                         Didn't have an account? 
                         <Link to='/register'>
-                            <span className='text-green-600'> Register</span>
+                            <span className='text-[#1F2B43]'> Register</span>
                         </Link>
                     </h4>
                 </div>
@@ -131,64 +131,64 @@ const LoginPage = () => {
 
             {/* ================= EMAIL FOR OTP MODAL ================= */}
             {openModal && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg w-80 flex flex-col gap-3">
-                        <h2 className="text-xl font-semibold">Reset Password</h2>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
+            <div className="bg-white p-6 rounded-lg w-80 flex flex-col gap-3">
+                <h2 className="text-xl font-semibold">Reset Password</h2>
 
-                        <input
-                            type="email"
-                            placeholder="Enter your registered email"
-                            value={emailForOTP}
-                            onChange={(e) => setEmailForOTP(e.target.value)}
-                            className="input w-full"
-                        />
+                <input
+                    type="email"
+                    placeholder="Enter your registered email"
+                    value={emailForOTP}
+                    onChange={(e) => setEmailForOTP(e.target.value)}
+                    className="input w-full"
+                />
 
-                        <button
-                            className="bg-black text-white py-2 rounded-md"
-                            onClick={handleSendOTP}
-                        >
-                            Send OTP
-                        </button>
+                <button
+                    className="bg-black text-white py-2 rounded-md"
+                    onClick={handleSendOTP}
+                >
+                    Send OTP
+                </button>
 
-                        <button 
-                            onClick={() => setOpenModal(false)} 
-                            className="text-red-600 mt-2"
-                        >
-                            Close
-                        </button>
-                    </div>
-                </div>
+                <button 
+                    onClick={() => setOpenModal(false)} 
+                    className="text-red-600 mt-2"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
             )}
 
             {/* ================= OTP VERIFY MODAL ================= */}
             {otpModal && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
-                    <div className="bg-white p-6 rounded-lg w-80 flex flex-col gap-3">
-                        <h2 className="text-xl font-semibold">Verify OTP</h2>
+        <div className="fixed inset-0 bg-black/50 flex items-center justify-center">
+            <div className="bg-white p-6 rounded-lg w-80 flex flex-col gap-3">
+                <h2 className="text-xl font-semibold">Verify OTP</h2>
 
-                        <input
-                            type="text"
-                            placeholder="Enter OTP"
-                            value={otp}
-                            onChange={(e) => setOtp(e.target.value)}
-                            className="input w-full"
-                        />
+                <input
+                    type="text"
+                    placeholder="Enter OTP"
+                    value={otp}
+                    onChange={(e) => setOtp(e.target.value)}
+                    className="input w-full"
+                />
 
-                        <button
-                            className="bg-green-600 text-white py-2 rounded-md"
-                            onClick={handleVerifyOTP}
-                        >
-                            Verify OTP
-                        </button>
+                <button
+                    className="bg-green-600 text-white py-2 rounded-md"
+                    onClick={handleVerifyOTP}
+                >
+                    Verify OTP
+                </button>
 
-                        <button 
-                            onClick={() => setOtpModal(false)} 
-                            className="text-red-600 mt-2"
-                        >
-                            Close
-                        </button>
-                    </div>
-                </div>
+                <button 
+                    onClick={() => setOtpModal(false)} 
+                    className="text-red-600 mt-2"
+                >
+                    Close
+                </button>
+            </div>
+        </div>
             )}
 
         </div>

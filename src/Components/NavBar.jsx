@@ -21,9 +21,9 @@ const NavBar = () => {
 
   const link = <>
   
-           <NavLink to='/'><li>Home</li></NavLink>
-            <li className='ml-2'>All</li>
-            <li className='ml-2'>About</li>
+           <NavLink to=''><li>Donation Requests</li></NavLink>
+            <li className=''>Funding Links</li>
+            <li className=''></li>
   
   </>
  
@@ -50,7 +50,8 @@ const NavBar = () => {
         }
       </ul>
     </div>
-    <a className="btn btn-ghost text-xl">daisyUI</a>
+   <Link to='/'> <a className="btn btn-ghost"><img className='w-[30px] lg:w-[40px]' src='/public/myLogo.png'></img>
+    <p className='font-bold text-[18px] lg:text-[22px]'>Give & Grow</p></a></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
     <ul className="menu menu-horizontal px-1">
