@@ -6,6 +6,7 @@ import LoginPage from "../Pages/LoginPage";
 import RegisterPage from "../Pages/RegisterPage";
 import Donor from "../Pages/Donor";
 import PrivateRoute from "./PrivateRoute";
+import DonationRequest from "../Pages/DonationRequest";
 
 
 
@@ -33,6 +34,11 @@ export const router = createBrowserRouter([
         {
             path:'/joinAsADonor',
             element:<PrivateRoute><Donor></Donor></PrivateRoute> , 
+
+        },
+        {
+            path:'/donationRequest',
+            element:<PrivateRoute><DonationRequest></DonationRequest></PrivateRoute> , 
 
         },
     ]

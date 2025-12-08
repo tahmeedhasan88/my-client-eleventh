@@ -70,7 +70,7 @@ const handleRegister = (data) => {
              {errors.photo?.type === 'required' && <p className='text-[12px] text-red-500'>Picture is required</p>}
 
             <h3>Blood Group</h3>
-            <select className='input w-sm'>>
+            <select className='input w-sm'>
             <option value="">Select One</option>
             <option value="1">A+</option>
             <option value="2">A-</option>

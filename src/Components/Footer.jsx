@@ -15,7 +15,7 @@ const Footer = () => {
       className="fill-current">
     
     </svg>
-    <img className='w-[30px] lg:w-[40px]' src='/myLogo.png'></img>
+    <img className='w-[30px] lg:w-[40px]' src='/myLogo-Photoroom.png'></img>
     <p>
      Give & Grow 
       <br />

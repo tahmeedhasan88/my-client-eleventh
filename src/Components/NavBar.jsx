@@ -21,7 +21,7 @@ const NavBar = () => {
 
   const link = <div className='flex flex-col lg:flex-row gap-2'>
   
-           <NavLink to=''><li>Donation Requests</li></NavLink>
+           <NavLink to='/donationRequest'><li>Donation Requests</li></NavLink>
             <li className=''>Funding Links</li>
             <li className=''></li>
   
@@ -50,7 +50,7 @@ const NavBar = () => {
         }
       </ul>
     </div>
-   <Link to='/'> <div className="btn btn-ghost"><img className='w-[30px] lg:w-[40px]' src='/public/myLogo.png'></img>
+   <Link to='/'> <div className="btn btn-ghost"><img className='w-[30px] lg:w-[40px] animate-spin' src='/myLogo-Photoroom.png'></img>
     <p className='font-bold text-[18px] lg:text-[22px]'>Give & Grow</p></div></Link>
   </div>
   <div className="navbar-center hidden lg:flex">
