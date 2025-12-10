@@ -3,6 +3,8 @@ import ContactUs from '../Components/ContactUs';
 import { useForm } from 'react-hook-form';
 import UseAuth from '../Hooks/UseAuth';
 import { useLoaderData } from 'react-router';
+import Swal from 'sweetalert2';
+import UseAxios from '../Hooks/UseAxios';
 
 const DonationRequest = () => {
 
@@ -10,6 +12,7 @@ const {user} = UseAuth()
 const { register, handleSubmit, watch,  formState: {error}} =useForm();
 const { districts, upazilas } = useLoaderData();
 const districtsName= districts.map(d=> d.name);
+const axiosSecure = UseAxios()
 
 const selectDistrict = watch('recipentDistrict')
 
@@ -26,6 +29,18 @@ const filterUpazilas = React.useMemo(()=>{
 
 const handleSubmitRequest = (data) =>{
 console.log(data)
+Swal.fire({
+        icon: 'success', // This gives the green checkmark icon
+        title: 'Request Submitted Successfully!',
+        text: 'Your blood donation request has been received. You will be notified when a donor is found.',
+        confirmButtonText: 'Great!',
+        confirmButtonColor: '#10B981' // Tailwind green-500 or similar
+    });
+axiosSecure.post('/donation', data)
+.then(res=>{
+    console.log('after saving donation', res.data)
+})
+
 }
 
     return (

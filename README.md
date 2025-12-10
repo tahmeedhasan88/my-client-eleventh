@@ -6,3 +6,5 @@ npm i -D daisyui@latest
 npm install react-icons
 npm install firebase
 npm install axios
+npm install sweetalert2
+npm i @tanstack/react-query

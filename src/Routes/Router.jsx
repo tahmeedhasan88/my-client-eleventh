@@ -7,6 +7,8 @@ import RegisterPage from "../Pages/RegisterPage";
 import Donor from "../Pages/Donor";
 import PrivateRoute from "./PrivateRoute";
 import DonationRequest from "../Pages/DonationRequest";
+import DashboardLayout from "../Layouts/DashboardLayout";
+import MyDonationReqs from "../DashBoards/MyDonationReqs";
 
 
 
@@ -22,22 +24,22 @@ export const router = createBrowserRouter([
 
         },
         {
-            path:'/login',
+            path:'login',
             element:<LoginPage></LoginPage> , 
 
         },
         {
-            path:'/register',
+            path:'register',
             element:<RegisterPage></RegisterPage> , 
 
         },
         {
-            path:'/joinAsADonor',
+            path:'joinAsADonor',
             element:<PrivateRoute><Donor></Donor></PrivateRoute> , 
 
         },
         {
-            path:'/donationRequest',
+            path:'donationRequest',
             element:<PrivateRoute><DonationRequest></DonationRequest></PrivateRoute> , 
             loader: async () => {
             const districts = await fetch('/Districts.json').then(res => res.json());
@@ -45,6 +47,17 @@ export const router = createBrowserRouter([
 
             return { districts, upazilas };
   }
+        },
+    ]
+  },
+  {
+    path: "/dashBoard",
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute> ,
+    children: [
+        {
+            path: 'myDonationRequests',
+            element: <MyDonationReqs></MyDonationReqs>,
+
         },
     ]
   },
