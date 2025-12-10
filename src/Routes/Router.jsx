@@ -39,7 +39,12 @@ export const router = createBrowserRouter([
         {
             path:'/donationRequest',
             element:<PrivateRoute><DonationRequest></DonationRequest></PrivateRoute> , 
+            loader: async () => {
+            const districts = await fetch('/Districts.json').then(res => res.json());
+            const upazilas = await fetch('/Upazila.json').then(res => res.json());
 
+            return { districts, upazilas };
+  }
         },
     ]
   },

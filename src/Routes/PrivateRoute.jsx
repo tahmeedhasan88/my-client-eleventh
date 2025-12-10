@@ -2,6 +2,7 @@ import React from 'react';
 import UseAuth from '../Hooks/UseAuth';
 import { Navigate } from 'react-router';
 import { useLocation } from 'react-router';
+import LoaderComponent from '../Components/LoaderComponent';
 
 const PrivateRoute = ({children}) => {
 
@@ -9,7 +10,7 @@ const PrivateRoute = ({children}) => {
     const location = useLocation()
 
     if(loading){
-        return <div className='flex items-center justify-center'><span className="loading loading-spinner loading-xl"></span></div>
+        return <LoaderComponent></LoaderComponent>
     }
 
     if(!user){
