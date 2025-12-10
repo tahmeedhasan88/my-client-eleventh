@@ -22,7 +22,7 @@ const NavBar = () => {
   const link = <div className='flex flex-col lg:flex-row gap-2'>
   
            <NavLink to='/donationRequest'><li>Donation Requests</li></NavLink>
-            <li className=''>Funding Links</li>
+          <NavLink to='/fundinglinks'><li className=''>Funding Links</li></NavLink>
             <li className=''></li>
   
   </div>

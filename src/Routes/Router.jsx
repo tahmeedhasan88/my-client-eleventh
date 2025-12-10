@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import DonationRequest from "../Pages/DonationRequest";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import MyDonationReqs from "../DashBoards/MyDonationReqs";
+import FundingCollection from "../Pages/FundingCollection";
 
 
 
@@ -47,6 +48,11 @@ export const router = createBrowserRouter([
 
             return { districts, upazilas };
   }
+        },
+        {
+            path:'fundinglinks',
+            element: <PrivateRoute><FundingCollection></FundingCollection></PrivateRoute>, 
+
         },
     ]
   },

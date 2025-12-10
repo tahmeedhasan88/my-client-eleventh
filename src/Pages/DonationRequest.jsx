@@ -28,6 +28,13 @@ const filterUpazilas = React.useMemo(()=>{
 
 
 const handleSubmitRequest = (data) =>{
+
+    const donationData = {
+    ...data,
+    status: "pending",
+  };
+  console.log(donationData);
+
 console.log(data)
 Swal.fire({
         icon: 'success', // This gives the green checkmark icon
@@ -36,7 +43,7 @@ Swal.fire({
         confirmButtonText: 'Great!',
         confirmButtonColor: '#10B981' // Tailwind green-500 or similar
     });
-axiosSecure.post('/donation', data)
+axiosSecure.post('/donation', donationData)
 .then(res=>{
     console.log('after saving donation', res.data)
 })
