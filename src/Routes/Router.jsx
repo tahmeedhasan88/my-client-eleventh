@@ -10,6 +10,7 @@ import DonationRequest from "../Pages/DonationRequest";
 import DashboardLayout from "../Layouts/DashboardLayout";
 import MyDonationReqs from "../DashBoards/MyDonationReqs";
 import FundingCollection from "../Pages/FundingCollection";
+import PaymentSuccess from "../Pages/PaymentSuccess";
 
 
 
@@ -52,7 +53,12 @@ export const router = createBrowserRouter([
         {
             path:'fundinglinks',
             element: <PrivateRoute><FundingCollection></FundingCollection></PrivateRoute>, 
+            loader: ()=>fetch('')
 
+        },
+        {
+            path:'payment-success',
+            element: <PaymentSuccess></PaymentSuccess>
         },
     ]
   },
