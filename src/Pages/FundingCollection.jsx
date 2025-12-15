@@ -1,15 +1,12 @@
 import React from 'react';
-import { useForm } from 'react-hook-form';
 import UseAxios from '../Hooks/UseAxios';
-import Swal from 'sweetalert2';
-import { useLoaderData } from 'react-router';
 import { Link } from 'react-router';
 import UseAuth from '../Hooks/UseAuth';
 import { useQuery } from '@tanstack/react-query';
 
 const FundingCollection = () => {
 
-    // const {register, handleSubmit} = useForm();
+
     const axiosSecure = UseAxios();
     const {user} = UseAuth()
 
@@ -21,8 +18,6 @@ const FundingCollection = () => {
             return res.data;
         }
     })
-
-
 
     const handleFund = async (selectedFund) => {
 
@@ -43,7 +38,6 @@ const FundingCollection = () => {
 }
 
     
-
     
     return (
         <div>
@@ -51,7 +45,7 @@ const FundingCollection = () => {
                 <h2 className='text-xl lg:text-2xl font-semibold '>Funding Page</h2>
                 <div>
                     <h3 className='text-2xl lg:text-3xl font-semibold '>Invest in Hope. Support Our Cause.</h3>
-                <h3 className='mt-10'>Amounts of Fund</h3>
+                <h3 className='mt-10 text-yellow-200 text-[16px]'>Select any amount of TK from here according to your desire!!</h3>
                     <div className='flex gap-4 mb-10'>
 
         
@@ -67,8 +61,6 @@ const FundingCollection = () => {
                         </button>
                             )
                             }
-
-
 
                     </div>
 
