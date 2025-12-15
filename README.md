@@ -9,3 +9,5 @@ npm install axios
 npm install sweetalert2
 npm i @tanstack/react-query
 npm install --save stripe
+npm i firebase-admin
+

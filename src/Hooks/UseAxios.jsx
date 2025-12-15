@@ -1,5 +1,7 @@
 import axios from 'axios';
 import React from 'react';
+import { useEffect } from 'react';
+import UseAuth from './UseAuth';
 
 
 const axiosSecure = axios.create({
@@ -9,6 +11,20 @@ const axiosSecure = axios.create({
 
 
 const UseAxios = () => {
+
+const {user} = UseAuth();
+
+useEffect(()=>{
+  axiosSecure.interceptors.request.use(config =>{
+    config.headers.Authorization = `Bearer ${user?.accessToken}`
+    return config
+  })
+
+
+},[user])
+
+
+
     return axiosSecure;
 };
 

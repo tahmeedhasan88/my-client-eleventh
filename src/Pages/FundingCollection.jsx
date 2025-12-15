@@ -54,7 +54,8 @@ const FundingCollection = () => {
                 <h2 className='text-xl lg:text-2xl font-semibold '>Funding Page</h2>
                 <div>
                     <h3 className='text-2xl lg:text-3xl font-semibold '>Invest in Hope. Support Our Cause.</h3>
-                <h3 className='mt-10 text-yellow-200 text-[16px]'>Select any amount of TK from here according to your desire!!</h3>
+                    <marquee direction="left"><h3 className='mt-10 text-yellow-200 text-[20px] font-semibold'>Select any amount from here according to your desire!!   Select any amount from here according to your desire!!   Select any amount from here according to your desire!!  Select any amount from here according to your desire!!   Select any amount from here according to your desire!!  Select any amount from here according to your desire!!   Select any amount from here according to your desire!!</h3></marquee>
+                
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
   {fundings.map(dt => (
     <div
@@ -78,7 +79,7 @@ const FundingCollection = () => {
 
       {/* Subtitle */}
       <p className="text-black text-lg font-medium mb-6">
-        Support Our Cause
+        {dt.fundingName}
       </p>
 
       {/* Button */}
@@ -105,7 +106,7 @@ const FundingCollection = () => {
                         <div className="space-y-2">
                             {fundingHistory.map(fund => (
                                 <div className="border p-3 rounded-lg" key={fund._id}>
-                                    <p><strong>Name:</strong> {user?.displayName}</p>
+                                    <p><strong>Email:</strong> {fund.email}</p>
                                     <p><strong>Amount:</strong> ${fund.amount}</p>
                                     <p><strong>Date: </strong>{fund.date}</p>
                                     
