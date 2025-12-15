@@ -3,6 +3,7 @@ import UseAxios from '../Hooks/UseAxios';
 import { Link } from 'react-router';
 import UseAuth from '../Hooks/UseAuth';
 import { useQuery } from '@tanstack/react-query';
+import { FaHeart } from 'react-icons/fa';
 
 const FundingCollection = () => {
 
@@ -14,6 +15,14 @@ const FundingCollection = () => {
         queryKey: ['my-fundings', user?.email],
         queryFn: async()=>{
             const res = await axiosSecure.get('http://localhost:3000/fund-details')
+
+            return res.data;
+        }
+    })
+    const {data: fundingHistory = []} = useQuery({
+        queryKey: ['funding-history', user?.email],
+        queryFn: async()=>{
+            const res = await axiosSecure.get('http://localhost:3000/allFundings')
 
             return res.data;
         }
@@ -46,23 +55,44 @@ const FundingCollection = () => {
                 <div>
                     <h3 className='text-2xl lg:text-3xl font-semibold '>Invest in Hope. Support Our Cause.</h3>
                 <h3 className='mt-10 text-yellow-200 text-[16px]'>Select any amount of TK from here according to your desire!!</h3>
-                    <div className='flex gap-4 mb-10'>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+  {fundings.map(dt => (
+    <div
+      key={dt._id}
+      className="w-full rounded-2xl p-6 bg-gradient-to-br from-cyan-200 via-blue-200 to-purple-300 shadow-lg flex flex-col justify-between"
+    >
+      {/* Title */}
+      <h2 className="text-xl font-semibold text-gray-800 mb-2">
+        Donate Now
+      </h2>
 
-        
+      {/* Amount */}
+      <div className="flex items-end gap-2 mb-4">
+        <span className="text-5xl font-bold text-teal-600">
+          {dt.fundingAmount}
+        </span>
+        <span className="text-lg font-semibold text-gray-700">
+          TK
+        </span>
+      </div>
 
-                            {
-                    fundings.map(dt => 
-                        <button 
-                            key={dt._id} 
-                            onClick={() => handleFund(dt)} 
-                            className='bg-blue-400 px-3 py-1 font-semibold rounded-[10px] lg:px-8 lg:py-2'
-                        >
-                            {dt.fundingAmount}
-                        </button>
-                            )
-                            }
+      {/* Subtitle */}
+      <p className="text-black text-lg font-medium mb-6">
+        Support Our Cause
+      </p>
 
-                    </div>
+      {/* Button */}
+      <button
+        onClick={() => handleFund(dt)}
+        className="w-full bg-[#1F2B43] text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition-all duration-300"
+      >
+        <span><FaHeart></FaHeart></span>
+        Click To Fund
+      </button>
+    </div>
+  ))}
+</div>
+
 
                    
                 </div>
@@ -73,11 +103,11 @@ const FundingCollection = () => {
                         <h3 className="text-xl font-semibold mb-4">Recent Funding</h3>
 
                         <div className="space-y-2">
-                            {fundings.map(fund => (
+                            {fundingHistory.map(fund => (
                                 <div className="border p-3 rounded-lg" key={fund._id}>
-                                    <p><strong>Email:</strong> {user.email}</p>
-                                    <p><strong>Amount:</strong> ${fund.fundingAmount}</p>
-                                    <p><strong>Date: </strong>{new Date().toISOString().slice(0, 10)}</p>
+                                    <p><strong>Name:</strong> {user?.displayName}</p>
+                                    <p><strong>Amount:</strong> ${fund.amount}</p>
+                                    <p><strong>Date: </strong>{fund.date}</p>
                                     
                                 </div>
                             ))}
