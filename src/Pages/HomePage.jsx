@@ -38,7 +38,7 @@ const HomePage = () => {
               bg-blue-600 hover:bg-blue-700
               text-white font-semibold
               px-5 py-2.5 sm:px-6 sm:py-3
-              rounded-md transition
+              rounded-md transition active:scale-95 transition-transform duration-150
             "
           >
             Join as a Donor

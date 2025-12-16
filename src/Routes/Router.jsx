@@ -38,6 +38,12 @@ export const router = createBrowserRouter([
         {
             path:'joinAsADonor',
             element:<PrivateRoute><Donor></Donor></PrivateRoute> , 
+            loader: async () => {
+            const districts = await fetch('/Districts.json').then(res => res.json());
+            const upazilas = await fetch('/Upazila.json').then(res => res.json());
+
+            return { districts, upazilas };
+                                }
 
         },
         {
@@ -53,7 +59,7 @@ export const router = createBrowserRouter([
         {
             path:'fundinglinks',
             element: <PrivateRoute><FundingCollection></FundingCollection></PrivateRoute>, 
-            loader: ()=>fetch('')
+            
 
         },
         {
