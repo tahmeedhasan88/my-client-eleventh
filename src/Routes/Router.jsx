@@ -11,6 +11,7 @@ import DashboardLayout from "../Layouts/DashboardLayout";
 import MyDonationReqs from "../DashBoards/MyDonationReqs";
 import FundingCollection from "../Pages/FundingCollection";
 import PaymentSuccess from "../Pages/PaymentSuccess";
+import AllUsers from "../Pages/AllUsers";
 
 
 
@@ -75,6 +76,11 @@ export const router = createBrowserRouter([
         {
             path: 'myDonationRequests',
             element: <MyDonationReqs></MyDonationReqs>,
+
+        },
+        {
+            path: 'allUsers',
+            element: <AllUsers></AllUsers>,
 
         },
     ]

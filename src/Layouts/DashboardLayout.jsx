@@ -1,5 +1,6 @@
 import React from 'react';
 import { BiSolidDonateBlood } from 'react-icons/bi';
+import { FaUser } from 'react-icons/fa';
 import { NavLink } from 'react-router';
 import { Link } from 'react-router';
 import { Outlet } from 'react-router';
@@ -42,7 +43,12 @@ const DashboardLayout = () => {
         {/* List item */}
 
         <li>
-            <NavLink to='/dashBoard/myDonationRequests'><BiSolidDonateBlood className='size-5'></BiSolidDonateBlood><span className="is-drawer-close:hidden">Donation Request Page</span></NavLink>
+            <NavLink to='/dashBoard/myDonationRequests'><BiSolidDonateBlood className='size-5'></BiSolidDonateBlood><span className="is-drawer-close:hidden">My Donation Requests</span></NavLink>
+        </li>
+
+
+        <li>
+            <NavLink to='/dashBoard/allUsers'><FaUser className='size-5'></FaUser><span className="is-drawer-close:hidden">All Users</span></NavLink>
         </li>
 
 

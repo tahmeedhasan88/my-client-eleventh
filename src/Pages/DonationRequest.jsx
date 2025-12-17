@@ -9,7 +9,7 @@ import UseAxios from '../Hooks/UseAxios';
 const DonationRequest = () => {
 
 const {user} = UseAuth()
-const { register, handleSubmit, watch,  formState: {error}} =useForm();
+const { register, handleSubmit, watch,  formState: {errors}} =useForm();
 const { districts, upazilas } = useLoaderData();
 const districtsName= districts.map(d=> d.name);
 const axiosSecure = UseAxios()
@@ -35,17 +35,19 @@ const handleSubmitRequest = (data) =>{
   };
   console.log(donationData);
 
-console.log(data)
-Swal.fire({
-        icon: 'success', // This gives the green checkmark icon
-        title: 'Request Submitted Successfully!',
-        text: 'Your blood donation request has been received. You will be notified when a donor is found.',
-        confirmButtonText: 'Great!',
-        confirmButtonColor: '#10B981' // Tailwind green-500 or similar
-    });
 axiosSecure.post('/donation', donationData)
 .then(res=>{
     console.log('after saving donation', res.data)
+    Swal.fire({
+        icon: 'success', 
+        title: 'Request Submitted Successfully!',
+        text: 'Your blood donation request has been received. You will be notified when a donor is found.',
+        confirmButtonText: 'Great!',
+        confirmButtonColor: '#10B981'
+    });
+})
+.catch(error=>{
+  console.log('error is', error)
 })
 
 }
@@ -60,7 +62,7 @@ axiosSecure.post('/donation', donationData)
         <div className="space-y-4">
           <div className="form-control">
             <label className="label mr-4">Requester Name</label>
-            <input type="text" value={user?.displayName} {...register('requesterName')} className="input input-bordered text-black" readOnly />
+            <input type="text" defaultValue={user?.displayName} {...register('requesterName')} className="input input-bordered text-black" readOnly />
           </div>
 
           <div className="form-control">
