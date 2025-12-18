@@ -9,7 +9,7 @@ import Swal from 'sweetalert2';
 const Donor = () => {
 
 const {user} = UseAuth();
-const { register, handleSubmit, watch,  formState: {error}} =useForm();
+const { register, handleSubmit, watch,  formState: {errors}} =useForm();
 const { districts, upazilas } = useLoaderData();
 const districtsName= districts.map(d=> d.name);
 const axiosSecure = UseAxios()
