@@ -2,10 +2,10 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router';
 import UseAuth from '../Hooks/UseAuth';
-import SocialLogin from '../SocialLogIn/SocialLogin';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useLocation } from 'react-router';
 import { useNavigate } from 'react-router';
+import SocialLogin from '../SocialLogIn/SocialLogin';
 
 const LoginPage = () => {
 
@@ -122,7 +122,7 @@ const LoginPage = () => {
 
                     <button className='w-sm bg-blue-500 hover:bg-blue-600 text-white py-2 rounded-[10px]'>Log In</button>
 
-                    <SocialLogin />
+                    <SocialLogin></SocialLogin>
 
                     <h4 className='text-center mt-2 font-semibold'>
                         Didn't have an account? 
