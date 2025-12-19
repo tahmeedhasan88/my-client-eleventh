@@ -13,7 +13,7 @@ const ContactUs = () => {
         +1 (800) 555-0199
       </p>
     </div>
-    <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+    <div className="card w-full max-w-sm shrink-0 shadow-2xl bg-white text-black">
       <div className="card-body">
         <fieldset className="fieldset">
             <label className="label">Name</label>
