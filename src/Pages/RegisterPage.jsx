@@ -1,7 +1,7 @@
 import { useForm } from 'react-hook-form';
 import { Link } from 'react-router';
 import UseAuth from '../Hooks/UseAuth';
-import SocialLogin from '../SocialLogIn/SocialLogin';
+import SocialLogin from '../SocialLogin/SocialLogin';
 import axios from 'axios';
 import UseAxios from '../Hooks/UseAxios';
 

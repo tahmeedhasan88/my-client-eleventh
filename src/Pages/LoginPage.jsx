@@ -5,7 +5,7 @@ import UseAuth from '../Hooks/UseAuth';
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useLocation } from 'react-router';
 import { useNavigate } from 'react-router';
-import SocialLogin from '../SocialLogIn/SocialLogin';
+import SocialLogin from '../SocialLogin/SocialLogin';
 
 const LoginPage = () => {
 
