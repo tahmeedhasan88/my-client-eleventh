@@ -2,7 +2,7 @@ import React from 'react';
 import UseAuth from '../Hooks/UseAuth';
 import { Navigate } from 'react-router';
 import { useLocation } from 'react-router';
-import LoaderComponent from '../Components/LoaderComponent';
+
 
 const PrivateRoute = ({children}) => {
 
@@ -10,7 +10,9 @@ const PrivateRoute = ({children}) => {
     const location = useLocation()
 
     if(loading){
-        return <LoaderComponent></LoaderComponent>
+        return <div className='flex items-center justify-center h-[500px]'>
+            <img className='h-[50px] w-[50px] lg:h-[70px] lg:w-[70px] animate-spin' src='/myLogo-Photoroom.png'></img>
+            </div>
     }
 
     if(!user){
