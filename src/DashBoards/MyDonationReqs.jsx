@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
 import UseAuth from '../Hooks/UseAuth';
 import UseAxios from '../Hooks/UseAxios';
 import { TiDelete } from 'react-icons/ti';
@@ -9,13 +8,17 @@ const MyDonationReqs = () => {
 
      const {user} = UseAuth();
      const axiosSecure = UseAxios();
-     const {data: donation = [], refetch} = useQuery({
+     const { data: donation = [], refetch } = useQuery({
             queryKey: ['myDonationRequests', user?.email],
-            queryFn: async()=>{
-                const res = await axiosSecure.get(`/donation?email=${user.email}`);
-                return res.data;
-             }
-        })
+            enabled: !!user?.email, 
+            queryFn: async () => {
+              const res = await axiosSecure.get(
+                `/donation?email=${user.email}`
+              );
+              return res.data;
+            }
+          });
+
 
 const handleDeleteReq = (id) =>{
     console.log(id)
