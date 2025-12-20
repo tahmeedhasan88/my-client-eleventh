@@ -1,137 +1,102 @@
-import React from 'react';
+import { useQuery } from "@tanstack/react-query";
+import UseAuth from "../Hooks/UseAuth";
+import UseAxios from "../Hooks/UseAxios";
+import { BsThreeDotsVertical } from "react-icons/bs";
+
 
 const AllUsers = () => {
-    return (
-        <div>
-           
+  const { user } = UseAuth();
+  const axiosSecure = UseAxios();
 
-{/* Donation Requests */}
-        <div className='mt-10'>
-<h2 className='text-2xl lg:text-3xl text-white font-semibold mb-4'>Donor Requests</h2>
-<div className="w-full overflow-x-auto border border-gray-700 bg-gray-900 text-white rounded-lg">
-{/* Set max height with vertical scroll for more than 10 rows */}
-<div className="max-h-96 overflow-y-auto">
-<table className="table w-full">
-<thead className="bg-gray-800 text-gray-200 sticky top-0">
-<tr>
-<th className="px-3 py-2">User</th>
-<th className="px-3 py-2 hidden md:table-cell">Email</th>
-<th className="px-3 py-2 hidden lg:table-cell">Role</th>
-<th className="px-3 py-2">Status</th>
-<th className="px-3 py-2">Option</th>
-</tr>
-</thead>
-<tbody>
-{/* Row Template */}
-<tr className="hover:bg-gray-700 transition-colors">
-<td className="px-3 py-2">
-<div className="flex items-center gap-3">
-<div className="avatar">
-<div className="w-10 h-10 rounded-full bg-gray-600" />
-</div>
-<div>
-<p className="font-semibold">User Name</p>
-<p className="text-xs text-gray-400 md:hidden">
-user@email.com
-</p>
-</div>
-</div>
-</td>
+  const { data: users = [], refetch } = useQuery({
+    queryKey: ['users'],
+    queryFn: async () => {
+      const res = await axiosSecure.get('/users');
+      return res.data;
+      
+    }
+   
+  });
 
+  const changeRole = async (id, role) => {
+    await axiosSecure.patch(`/users/${role}/${id}`);
+    refetch();
+  };
 
-<td className="px-3 py-2 hidden md:table-cell text-gray-300">user@email.com</td>
+  return (
+    <div className="p-5">
+      <h2 className="text-2xl font-bold mb-5 text-white">All Users</h2>
 
-
-<td className="px-3 py-2 hidden lg:table-cell">
-<span className="badge badge-outline text-gray-200 border-gray-500">Role</span>
-</td>
-
-
-<td className="px-3 py-2">
-<span className="badge badge-success">Active</span>
-</td>
-
-
-<td className="px-3 py-2">
-<p className="cursor-pointer hover:text-gray-400">Menu</p>
-</td>
-</tr>
-{/* Repeat rows as needed */}
-</tbody>
-</table>
-</div>
-</div>
-        </div>
-
-
-
-
-
-
-{/* All user */}
-
-        <div className='mt-10'>
-        <h2 className='text-2xl lg:text-3xl text-white font-semibold mb-4'>All Users</h2>
-        <div className="w-full overflow-x-auto border border-gray-700 bg-gray-900 text-white rounded-lg">
-        {/* Set max height with vertical scroll for more than 10 rows */}
-        <div className="max-h-96 overflow-y-auto">
+      <div className="overflow-x-auto bg-[#1F2B43] ">
         <table className="table w-full">
-        <thead className="bg-gray-800 text-gray-200 sticky top-0">
-        <tr>
-        <th className="px-3 py-2">User</th>
-        <th className="px-3 py-2 hidden md:table-cell">Email</th>
-        <th className="px-3 py-2 hidden lg:table-cell">Role</th>
-        <th className="px-3 py-2">Status</th>
-        <th className="px-3 py-2">Option</th>
-        </tr>
-        </thead>
-        <tbody>
-        {/* Row Template */}
-        <tr className="hover:bg-gray-700 transition-colors">
-        <td className="px-3 py-2">
-        <div className="flex items-center gap-3">
-        <div className="avatar">
-        <div className="w-10 h-10 rounded-full bg-gray-600" />
-        </div>
-        <div>
-        <p className="font-semibold">User Name</p>
-        <p className="text-xs text-gray-400 md:hidden">
-        user@email.com
-        </p>
-        </div>
-        </div>
-        </td>
+          <thead className="text-white">
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Current Role</th>
+              <th className="text-right">Action</th>
+            </tr>
+          </thead>
+
+          <tbody className="bg-gray-800 text-white">
+            {users.map(u => (
+              <tr key={u._id}>
 
 
-        <td className="px-3 py-2 hidden md:table-cell text-gray-300">user@email.com</td>
 
+                <td>{u.displayName}</td>
 
-        <td className="px-3 py-2 hidden lg:table-cell">
-        <span className="badge badge-outline text-gray-200 border-gray-500">Role</span>
-        </td>
+                <td>{u.email}</td>
 
+                {/* Present Role */}
+                <td className="capitalize font-medium">
+                  {u.role}
+                </td>
 
-        <td className="px-3 py-2">
-        <span className="badge badge-success">Active</span>
-        </td>
+                {/* Dropdown Action */}
+                <td className="text-right">
+                  <div className="dropdown dropdown-end">
+                    <label tabIndex={0} className="btn btn-ghost btn-sm">
+                      <BsThreeDotsVertical size={18} />
+                    </label>
 
+                    <ul
+                      tabIndex={0}
+                      className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40"
+                    >
+                      {u.role !== 'admin' && (
+                        <li>
+                          <button onClick={() => changeRole(u._id, 'admin')}>
+                            Make Admin
+                          </button>
+                        </li>
+                      )}
 
-        <td className="px-3 py-2">
-        <p className="cursor-pointer hover:text-gray-400">Menu</p>
-        </td>
-        </tr>
-        {/* Repeat rows as needed */}
-        </tbody>
+                      {u.role !== 'donor' && (
+                        <li>
+                          <button onClick={() => changeRole(u._id, 'donor')}>
+                            Make Donor
+                          </button>
+                        </li>
+                      )}
+
+                      {u.role !== 'volunteer' && (
+                        <li>
+                          <button onClick={() => changeRole(u._id, 'volunteer')}>
+                            Make Volunteer
+                          </button>
+                        </li>
+                      )}
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+            ))}
+          </tbody>
         </table>
-        </div>
-        </div>
-        </div>
-
-
-
-
-        </div>
-    );
+      </div>
+    </div>
+  );
 };
 
 export default AllUsers;

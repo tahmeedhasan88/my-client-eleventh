@@ -1,6 +1,7 @@
 import React from 'react';
 import { BiSolidDonateBlood } from 'react-icons/bi';
 import { FaUser } from 'react-icons/fa';
+import { MdBloodtype } from 'react-icons/md';
 import { NavLink } from 'react-router';
 import { Link } from 'react-router';
 import { Outlet } from 'react-router';
@@ -50,6 +51,9 @@ const DashboardLayout = () => {
             <NavLink to='/dashBoard/myDonationRequests'><BiSolidDonateBlood className='size-5'></BiSolidDonateBlood><span className="is-drawer-close:hidden">My Donation Requests</span></NavLink>
         </li>
 
+       <li>
+            <NavLink to='/dashBoard/allDonationReqs'><MdBloodtype className='size-5'></MdBloodtype><span className="is-drawer-close:hidden">All Donation Requests</span></NavLink>
+        </li>
 
         
 

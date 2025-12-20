@@ -12,6 +12,7 @@ import MyDonationReqs from "../DashBoards/MyDonationReqs";
 import FundingCollection from "../Pages/FundingCollection";
 import PaymentSuccess from "../Pages/PaymentSuccess";
 import AllUsers from "../Pages/AllUsers";
+import AllDonationReqs from "../Pages/AllDonationReqs";
 
 
 
@@ -81,6 +82,11 @@ export const router = createBrowserRouter([
         {
             path: 'allUsers',
             element: <AllUsers></AllUsers>,
+
+        },
+        {
+            path: 'allDonationReqs',
+            element: <AllDonationReqs></AllDonationReqs>,
 
         },
     ]
