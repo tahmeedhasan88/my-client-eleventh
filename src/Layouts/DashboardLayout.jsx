@@ -5,8 +5,12 @@ import { MdBloodtype } from 'react-icons/md';
 import { NavLink } from 'react-router';
 import { Link } from 'react-router';
 import { Outlet } from 'react-router';
+import useRole from '../Hooks/useRole';
 
 const DashboardLayout = () => {
+
+const {role} = useRole();
+
     return (
         <div className='bg-[#2B4060] inter'>
 
@@ -43,9 +47,35 @@ const DashboardLayout = () => {
 
         {/* List item */}
 
-        <li>
+
+      {
+        role === 'admin' && (
+          <>
+             
+          </>
+        )
+      }
+
+      {
+        role === 'admin' && (
+          <>
+              
+          </>
+        )
+      }
+      {
+        role === 'admin' && (
+          <>
+              
+          </>
+        )
+      }
+
+<li>
             <NavLink to='/dashBoard/allUsers'><FaUser className='size-5'></FaUser><span className="is-drawer-close:hidden">All Users</span></NavLink>
-        </li>
+            </li> 
+            
+        
 
         <li>
             <NavLink to='/dashBoard/myDonationRequests'><BiSolidDonateBlood className='size-5'></BiSolidDonateBlood><span className="is-drawer-close:hidden">My Donation Requests</span></NavLink>

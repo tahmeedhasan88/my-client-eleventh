@@ -1,4 +1,4 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import UseAuth from "../Hooks/UseAuth";
 import UseAxios from "../Hooks/UseAxios";
 import { BsThreeDotsVertical } from "react-icons/bs";
@@ -7,6 +7,7 @@ import { BsThreeDotsVertical } from "react-icons/bs";
 const AllUsers = () => {
   const { user } = UseAuth();
   const axiosSecure = UseAxios();
+  const queryClient = useQueryClient();
 
   const { data: users = [], refetch } = useQuery({
     queryKey: ['users'],
@@ -19,9 +20,15 @@ const AllUsers = () => {
   });
 
   const changeRole = async (id, role) => {
-    await axiosSecure.patch(`/users/${role}/${id}`);
-    refetch();
-  };
+  const updatedUser = await axiosSecure.patch(`/users/${role}/${id}`);
+  queryClient.setQueryData(['users'], old =>
+    old.map(u => (u._id === id ? updatedUser.data : u))
+      
+  );
+  console.log('Updated User:', updatedUser.data)
+  refetch(); 
+};
+
 
   return (
     <div className="p-5">
@@ -62,7 +69,7 @@ const AllUsers = () => {
 
                     <ul
                       tabIndex={0}
-                      className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40"
+                      className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-40 text-black"
                     >
                       {u.role !== 'admin' && (
                         <li>

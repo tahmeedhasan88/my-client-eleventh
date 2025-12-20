@@ -1,31 +1,26 @@
-import axios from 'axios';
-import React from 'react';
-import { useEffect } from 'react';
-import UseAuth from './UseAuth';
-
-
-const axiosSecure = axios.create({
-  baseURL: 'http://localhost:3000',
-  
-});
-
+import axios from "axios";
+import UseAuth from "./UseAuth";
 
 const UseAxios = () => {
+  const { user } = UseAuth();
 
-const {user} = UseAuth();
+  const axiosSecure = axios.create({
+    baseURL: "https://my-server-eleventh.onrender.com",
+  });
 
-useEffect(()=>{
-  axiosSecure.interceptors.request.use(config =>{
-    config.headers.Authorization = `Bearer ${user?.accessToken}`
-    return config
-  })
+  axiosSecure.interceptors.request.use(
+    (config) => {
+      if (user?.accessToken) {
+        config.headers.Authorization = `Bearer ${user.accessToken}`;
+      }
+      return config;
+    },
+    (error) => {
+      return Promise.reject(error);
+    }
+  );
 
-
-},[user])
-
-
-
-    return axiosSecure;
+  return axiosSecure;
 };
 
 export default UseAxios;

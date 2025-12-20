@@ -23,6 +23,7 @@ const NavBar = () => {
   
            <NavLink to='/donationRequest'><li>Donation Requests</li></NavLink>
           <NavLink to='/fundinglinks'><li className=''>Funding Links</li></NavLink>
+          <NavLink to='/dashBoard'><li className=''>My Dashboard</li></NavLink>
             <li className=''></li>
   
   </div>
