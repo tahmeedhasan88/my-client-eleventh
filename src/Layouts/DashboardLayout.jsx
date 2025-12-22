@@ -72,7 +72,7 @@ console.log(role)
             </li> 
 
             <li>
-            <NavLink to='/dashBoard/donationRequest'><FaCodePullRequest className='size-5'></FaCodePullRequest><span className="is-drawer-close:hidden">Create Donation Requests</span></NavLink>
+            <NavLink to='/dashBoard/donationRequest'><FaCodePullRequest className='size-4'></FaCodePullRequest><span className="is-drawer-close:hidden">Create Donation Requests</span></NavLink>
             </li> 
           </>
         )

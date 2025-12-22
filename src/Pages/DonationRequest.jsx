@@ -1,5 +1,4 @@
 import React from 'react';
-import ContactUs from '../Components/ContactUs';
 import { useForm } from 'react-hook-form';
 import UseAuth from '../Hooks/UseAuth';
 import { useLoaderData } from 'react-router';
@@ -154,7 +153,7 @@ axiosSecure.post('/donation', donationData)
 
          {/* Hero Section */}
 
-       <ContactUs></ContactUs>
+       
 
 
         </div>

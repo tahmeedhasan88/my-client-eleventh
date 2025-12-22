@@ -14,6 +14,7 @@ import PaymentSuccess from "../Pages/PaymentSuccess";
 import AllUsers from "../Pages/AllUsers";
 import AllDonationReqs from "../Pages/AllDonationReqs";
 import AdminRoute from "./AdminRoute";
+import DonorRoute from "./DonorRoute";
 
 
 
@@ -68,7 +69,7 @@ export const router = createBrowserRouter([
     children: [
         {
             path: 'myDonationRequests',
-            element: <MyDonationReqs></MyDonationReqs>,
+            element: <DonorRoute><MyDonationReqs></MyDonationReqs></DonorRoute>,
 
         },
         {
@@ -78,18 +79,18 @@ export const router = createBrowserRouter([
         },
         {
             path: 'allDonationReqs',
-            element: <AllDonationReqs></AllDonationReqs>,
+            element: <AdminRoute><AllDonationReqs></AllDonationReqs></AdminRoute>,
 
         },
         {
             path:'donationRequest',
-            element: <DonationRequest></DonationRequest> , 
+            element: <DonorRoute><DonationRequest></DonationRequest></DonorRoute> , 
             loader: async () => {
             const districts = await fetch('/Districts.json').then(res => res.json());
             const upazilas = await fetch('/Upazila.json').then(res => res.json());
 
             return { districts, upazilas };
-        }
+                                }
         },
     ]
   },
