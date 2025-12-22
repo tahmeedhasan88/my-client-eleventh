@@ -12,11 +12,6 @@ const useRole = () => {
     queryFn: async () => {
       const res = await axiosSecure.get(
         `/users/role/${user.email}`,
-        {
-          headers: {
-            authorization: `Bearer ${localStorage.getItem('access-token')}`
-          }
-        }
       );
       return res.data;
     }
