@@ -11,7 +11,7 @@ const useRole = () => {
     enabled: !loading && !!user?.email,
     queryFn: async () => {
       const res = await axiosSecure.get(
-        `${import.meta.env.VITE_API_URL}/users/role/${user.email}`,
+        `/users/role/${user.email}`,
         {
           headers: {
             authorization: `Bearer ${localStorage.getItem('access-token')}`

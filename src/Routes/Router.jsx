@@ -82,7 +82,7 @@ export const router = createBrowserRouter([
         },
         {
             path: 'allUsers',
-            element: <AllUsers></AllUsers>,
+            element: <AdminRoute><AllUsers></AllUsers></AdminRoute>,
 
         },
         {

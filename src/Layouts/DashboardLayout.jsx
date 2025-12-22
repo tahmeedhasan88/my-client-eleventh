@@ -11,6 +11,7 @@ const DashboardLayout = () => {
 
 const {role} = useRole();
 
+console.log(role)
     return (
         <div className='bg-[#2B4060] inter'>
 
@@ -51,39 +52,41 @@ const {role} = useRole();
       {
         role === 'admin' && (
           <>
-             
-          </>
-        )
-      }
-
-      {
-        role === 'admin' && (
-          <>
-              
-          </>
-        )
-      }
-      {
-        role === 'admin' && (
-          <>
-              
-          </>
-        )
-      }
-
-<li>
+              <li>
             <NavLink to='/dashBoard/allUsers'><FaUser className='size-5'></FaUser><span className="is-drawer-close:hidden">All Users</span></NavLink>
+             </li>
+
+              <li>
+            <NavLink to='/dashBoard/allDonationReqs'><MdBloodtype className='size-5'></MdBloodtype><span className="is-drawer-close:hidden">All Donation Requests</span></NavLink>
+             </li>
+          </>
+        )
+      }
+
+      {
+        role === 'donor' && (
+          <>
+             <li>
+            <NavLink to='/dashBoard/myDonationRequests'><BiSolidDonateBlood className='size-5'></BiSolidDonateBlood><span className="is-drawer-close:hidden">My Donation Requests</span></NavLink>
             </li> 
+          </>
+        )
+      }
+      {
+        role === 'volunteer' && (
+          <>
+              
+          </>
+        )
+      }
+
+            
             
         
 
-        <li>
-            <NavLink to='/dashBoard/myDonationRequests'><BiSolidDonateBlood className='size-5'></BiSolidDonateBlood><span className="is-drawer-close:hidden">My Donation Requests</span></NavLink>
-        </li>
+        
 
-       <li>
-            <NavLink to='/dashBoard/allDonationReqs'><MdBloodtype className='size-5'></MdBloodtype><span className="is-drawer-close:hidden">All Donation Requests</span></NavLink>
-        </li>
+       
 
         
 
