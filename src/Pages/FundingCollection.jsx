@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import UseAuth from '../Hooks/UseAuth';
 import { useQuery } from '@tanstack/react-query';
 import { FaHeart } from 'react-icons/fa';
+import ContactUs from '../Components/ContactUs';
 
 const FundingCollection = () => {
 
@@ -99,7 +100,6 @@ const FundingCollection = () => {
                 </div>
 
                 <div>
-
                     <div className="bg-white text-black p-4 rounded-lg mt-5">
                         <h3 className="text-xl font-semibold mb-4">Recent Funding</h3>
 
@@ -114,14 +114,11 @@ const FundingCollection = () => {
                             ))}
                         </div>
                     </div>
-
-
-
                 </div>
 
+              <ContactUs></ContactUs>
 
-
-            </div>
+                </div>
         </div>
     );
 };

@@ -19,7 +19,7 @@ const NavBar = () => {
   });
   }
 
-  const link = <div className='flex flex-col lg:flex-row gap-5 font-semibold'>
+  const link = <div className='flex flex-col lg:flex-row gap-2 lg:gap-5 font-semibold'>
   
            <NavLink to='/'><li>Donation Requests</li></NavLink>
           <NavLink to='/fundinglinks'><li className=''>Funding Links</li></NavLink>
