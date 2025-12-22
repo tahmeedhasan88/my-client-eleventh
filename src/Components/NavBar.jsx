@@ -19,9 +19,9 @@ const NavBar = () => {
   });
   }
 
-  const link = <div className='flex flex-col lg:flex-row gap-2'>
+  const link = <div className='flex flex-col lg:flex-row gap-5 font-semibold'>
   
-           <NavLink to='/donationRequest'><li>Donation Requests</li></NavLink>
+           <NavLink to='/'><li>Donation Requests</li></NavLink>
           <NavLink to='/fundinglinks'><li className=''>Funding Links</li></NavLink>
           <NavLink to='/dashBoard'><li className=''>My Dashboard</li></NavLink>
             <li className=''></li>

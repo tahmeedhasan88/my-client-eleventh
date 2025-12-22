@@ -51,3 +51,14 @@
 @keyframes blink {
   50% { border-color: transparent; }
 }
+
+
+a.active {
+  color: #0984e3;
+}
+a.pending {
+  color: blue;
+}
+a.transitioning {
+  view-transition-name: my-transition;
+}

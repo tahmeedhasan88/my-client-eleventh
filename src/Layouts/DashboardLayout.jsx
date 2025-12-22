@@ -6,6 +6,7 @@ import { NavLink } from 'react-router';
 import { Link } from 'react-router';
 import { Outlet } from 'react-router';
 import useRole from '../Hooks/useRole';
+import { FaCodePullRequest } from 'react-icons/fa6';
 
 const DashboardLayout = () => {
 
@@ -68,6 +69,10 @@ console.log(role)
           <>
              <li>
             <NavLink to='/dashBoard/myDonationRequests'><BiSolidDonateBlood className='size-5'></BiSolidDonateBlood><span className="is-drawer-close:hidden">My Donation Requests</span></NavLink>
+            </li> 
+
+            <li>
+            <NavLink to='/dashBoard/donationRequest'><FaCodePullRequest className='size-5'></FaCodePullRequest><span className="is-drawer-close:hidden">Create Donation Requests</span></NavLink>
             </li> 
           </>
         )

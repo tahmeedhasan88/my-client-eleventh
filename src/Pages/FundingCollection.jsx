@@ -14,7 +14,7 @@ const FundingCollection = () => {
     const {data: fundings = []} = useQuery({
         queryKey: ['my-fundings', user?.email],
         queryFn: async()=>{
-            const res = await axiosSecure.get('https://my-server-eleventh.onrender.com/fund-details')
+            const res = await axiosSecure.get('http://localhost:3000/fund-details')
 
             return res.data;
         }
@@ -22,7 +22,7 @@ const FundingCollection = () => {
     const {data: fundingHistory = []} = useQuery({
         queryKey: ['funding-history', user?.email],
         queryFn: async()=>{
-            const res = await axiosSecure.get('https://my-server-eleventh.onrender.com/allFundings')
+            const res = await axiosSecure.get('http://localhost:3000/allFundings')
 
             return res.data;
         }
@@ -57,39 +57,39 @@ const FundingCollection = () => {
                     <marquee direction="left"><h3 className='mt-10 text-yellow-200 text-[20px] font-semibold'>Select any amount from here according to your desire!!   Select any amount from here according to your desire!!   Select any amount from here according to your desire!!  Select any amount from here according to your desire!!   Select any amount from here according to your desire!!  Select any amount from here according to your desire!!   Select any amount from here according to your desire!!</h3></marquee>
                 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
-  {fundings.map(dt => (
-    <div
-      key={dt._id}
-      className="w-full rounded-2xl p-6 bg-gradient-to-br from-cyan-200 via-blue-200 to-purple-300 shadow-lg flex flex-col justify-between"
-    >
-      {/* Title */}
-      <h2 className="text-xl font-semibold text-gray-800 mb-2">
-        Donate Now
-      </h2>
+              {fundings.map(dt => (
+                <div
+                  key={dt._id}
+                  className="w-full rounded-2xl p-6 bg-gradient-to-br from-cyan-200 via-blue-200 to-purple-300 shadow-lg flex flex-col justify-between"
+                >
+            {/* Title */}
+            <h2 className="text-xl font-semibold text-gray-800 mb-2">
+              Donate Now
+            </h2>
 
-      {/* Amount */}
-      <div className="flex items-end gap-2 mb-4">
-        <span className="text-5xl font-bold text-teal-600">
-          {dt.fundingAmount}
-        </span>
-        <span className="text-lg font-semibold text-gray-700">
-          TK
-        </span>
-      </div>
+            {/* Amount */}
+            <div className="flex items-end gap-2 mb-4">
+              <span className="text-5xl font-bold text-teal-600">
+                {dt.fundingAmount}
+              </span>
+              <span className="text-lg font-semibold text-gray-700">
+                TK
+              </span>
+            </div>
 
-      {/* Subtitle */}
-      <p className="text-black text-lg font-medium mb-6">
-        {dt.fundingName}
-      </p>
+            {/* Subtitle */}
+            <p className="text-black text-lg font-medium mb-6">
+              {dt.fundingName}
+            </p>
 
-      {/* Button */}
-      <button
-        onClick={() => handleFund(dt)}
-        className="w-full bg-[#1F2B43] text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition-all duration-300"
-      >
-        <span><FaHeart></FaHeart></span>
-        Click To Fund
-      </button>
+            {/* Button */}
+            <button
+              onClick={() => handleFund(dt)}
+              className="w-full bg-[#1F2B43] text-white font-semibold py-3 rounded-full flex items-center justify-center gap-2 transition-all duration-300"
+            >
+              <span><FaHeart></FaHeart></span>
+             Click To Fund
+             </button>
     </div>
   ))}
 </div>
