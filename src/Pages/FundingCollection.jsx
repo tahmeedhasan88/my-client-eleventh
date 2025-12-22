@@ -14,7 +14,7 @@ const FundingCollection = () => {
     const {data: fundings = []} = useQuery({
         queryKey: ['my-fundings', user?.email],
         queryFn: async()=>{
-            const res = await axiosSecure.get('http://localhost:3000/fund-details')
+            const res = await axiosSecure.get('https://my-server-eleventh.onrender.com/fund-details')
 
             return res.data;
         }
@@ -22,7 +22,7 @@ const FundingCollection = () => {
     const {data: fundingHistory = []} = useQuery({
         queryKey: ['funding-history', user?.email],
         queryFn: async()=>{
-            const res = await axiosSecure.get('http://localhost:3000/allFundings')
+            const res = await axiosSecure.get('https://my-server-eleventh.onrender.com/allFundings')
 
             return res.data;
         }
