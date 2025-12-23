@@ -11,7 +11,7 @@ const HomePage = () => {
       className="
         relative w-full 
         h-[350px] sm:h-[420px] md:h-[500px] lg:h-[560px]
-        bg-cover bg-center flex items-center
+        bg-cover bg-center flex items-center z-0
       "
       style={{
         backgroundImage: `url('/banner.jpg')`,
