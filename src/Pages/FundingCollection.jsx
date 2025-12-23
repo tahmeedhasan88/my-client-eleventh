@@ -13,6 +13,7 @@ const FundingCollection = () => {
     const {user} = UseAuth()
 
     const {data: fundings = []} = useQuery({
+        enabled: !!user?.email,
         queryKey: ['my-fundings', user?.email],
         queryFn: async()=>{
             const res = await axiosSecure.get('https://my-server-eleventh.onrender.com/fund-details')
@@ -55,7 +56,16 @@ const FundingCollection = () => {
                 <h2 className='text-xl lg:text-2xl font-semibold '>Funding Page</h2>
                 <div>
                     <h3 className='text-2xl lg:text-3xl font-semibold '>Invest in Hope. Support Our Cause.</h3>
-                    <marquee direction="left"><h3 className='mt-10 text-yellow-200 text-[20px] font-semibold'>Select any amount from here according to your desire!!   Select any amount from here according to your desire!!   Select any amount from here according to your desire!!  Select any amount from here according to your desire!!   Select any amount from here according to your desire!!  Select any amount from here according to your desire!!   Select any amount from here according to your desire!!</h3></marquee>
+
+
+                    <div className="overflow-hidden bg-transparent">
+  <div className="whitespace-nowrap animate-marquee text-yellow-200 text-[20px] font-semibold">
+    Select any amount from here according to your desire!!  
+    Select any amount from here according to your desire!!  
+    Select any amount from here according to your desire!!
+  </div>
+</div>
+
                 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
               {fundings.map(dt => (
