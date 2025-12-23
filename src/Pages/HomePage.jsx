@@ -11,7 +11,7 @@ const HomePage = () => {
       className="
         relative w-full 
         h-[350px] sm:h-[420px] md:h-[500px] lg:h-[560px]
-        bg-cover bg-center flex items-center z-0
+        bg-cover bg-center flex items-center
       "
       style={{
         backgroundImage: `url('/banner.jpg')`,
@@ -27,7 +27,7 @@ const HomePage = () => {
       >
         <h1 className="
             text-white font-bold leading-tight
-            text-3xl sm:text-4xl md:text-5xl lg:text-6xl type">
+            text-3xl sm:text-4xl md:text-5xl lg:text-6xl type z-0">
           Connecting Hearts,<br /> Cultivate Hope
         </h1>
 
