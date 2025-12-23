@@ -11,7 +11,7 @@ const PaymentSuccess = () => {
             <FaMoneyCheck className='size-10 lg:size-13  text-green-600'></FaMoneyCheck>
             <div className='flex items-center gap-2'><h2 className='text-xl font-bold lg:text-2xl'>Payment Successful</h2> <FaCircleCheck className='text-green-900'></FaCircleCheck></div>
             <p>Go Back To Home</p>
-            <Link to='/fundinglinks'><button className='px-3 py-1 rounded-[10px] mt-5 bg-blue-400 text-white lg:px-6 lg:py-2 font-semibold'>Go Back</button></Link>
+            <Link to='/fundingCollection'><button className='px-3 py-1 rounded-[10px] mt-5 bg-blue-400 text-white lg:px-6 lg:py-2 font-semibold'>Go Back</button></Link>
            </div>
 
         </div>

@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
         },
         
         {
-            path:'fundinglinks',
+            path:'fundingCollection',
             element: <PrivateRoute><FundingCollection></FundingCollection></PrivateRoute>, 
             
 
