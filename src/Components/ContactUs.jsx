@@ -17,7 +17,7 @@ const ContactUs = () => {
       <div className="card-body">
         <fieldset className="fieldset">
             <label className="label">Name</label>
-          <input type="text" className="input" placeholder="Your" />
+          <input type="text" className="input bg-black" placeholder="Your" />
           <label className="label">Email</label>
           <input type="email" className="input" placeholder="Email" />
           <label className="label">Subject</label>
