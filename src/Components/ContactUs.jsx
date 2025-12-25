@@ -17,13 +17,13 @@ const ContactUs = () => {
       <div className="card-body">
         <fieldset className="fieldset">
             <label className="label">Name</label>
-          <input type="text" className="input bg-black" placeholder="Your" />
+          <input type="text" className="input bg-white" placeholder="Your" />
           <label className="label">Email</label>
-          <input type="email" className="input" placeholder="Email" />
+          <input type="email" className="input bg-white" placeholder="Email" />
           <label className="label">Subject</label>
-          <input type="text" className="input" placeholder="Subject" />
+          <input type="text" className="input bg-white" placeholder="Subject" />
           <label className="label">Message</label>
-          <input type="text" className="input" placeholder="Message" />
+          <input type="text" className="input bg-white" placeholder="Message" />
           <button className="btn mt-4 bg-blue-600 hover:bg-blue-700 text-white">Send Message</button>
         </fieldset>
       </div>
