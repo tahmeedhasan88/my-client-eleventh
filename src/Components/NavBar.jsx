@@ -47,7 +47,7 @@ const NavBar = () => {
         className="menu menu-sm dropdown-content bg-white  rounded-box z-50 mt-3 w-52 p-2 shadow absolute">
         {link}
         {
-        user ? <button className='btn'>Log Out</button> : recognize
+        user ? <button onClick={handleLogOut} className='btn bg-black text-white px-6 py-0 text-[12px] lg:text-[15px] lg:px-8 '>Log Out</button> : recognize
         }
       </ul>
     </div>
@@ -62,7 +62,7 @@ const NavBar = () => {
   <div className="navbar-end hidden lg:flex">
    
    {
-    user ? <button onClick={handleLogOut} className='btn bg-white text-black border-4 border-black hover:bg-black hover:text-white px-6 py-0 text-[12px] lg:text-[15px] lg:px-8 '>Log Out</button> : recognize
+    user ? <button onClick={handleLogOut} className='btn bg-black text-white px-6 py-0 text-[12px] lg:text-[15px] lg:px-8 '>Log Out</button> : recognize
    }
 
   </div>
