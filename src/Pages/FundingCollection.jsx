@@ -58,13 +58,9 @@ const FundingCollection = () => {
                     <h3 className='text-2xl lg:text-3xl font-semibold '>Invest in Hope. Support Our Cause.</h3>
 
 
-                    <div className="overflow-hidden bg-transparent">
-  <div className="whitespace-nowrap animate-marquee text-yellow-200 text-[20px] font-semibold">
+                   <marquee><p>Select any amount from here according to your desire!!  
     Select any amount from here according to your desire!!  
-    Select any amount from here according to your desire!!  
-    Select any amount from here according to your desire!!
-  </div>
-</div>
+    Select any amount from here according to your desire!!</p></marquee>
 
                 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">

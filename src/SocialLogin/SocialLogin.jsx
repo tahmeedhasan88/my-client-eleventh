@@ -33,7 +33,7 @@ signInGoogle()
     return (
         <div>
             <p className='font-semibold text-center'>Or</p>
-            <button onClick={handleGoogleSignIn} className='w-sm py-2 rounded-[10px] border btn'><FcGoogle></FcGoogle> Continue With Google</button>
+            <button onClick={handleGoogleSignIn} className='w-sm py-2 rounded-[10px] border btn bg-white text-black'><FcGoogle></FcGoogle> Continue With Google</button>
         </div>
     );
 };
