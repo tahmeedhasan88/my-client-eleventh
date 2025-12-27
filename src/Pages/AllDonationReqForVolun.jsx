@@ -27,7 +27,7 @@ const AllDonationReqForVolun = () => {
 
         const getStatusColor = (status) => {
         switch (status) {
-        case 'Pending':
+        case 'pending':
         return 'bg-yellow-500';
         case 'Inprogress':
         return 'bg-blue-500';
