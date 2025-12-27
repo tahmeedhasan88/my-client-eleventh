@@ -16,6 +16,7 @@ import AllDonationReqs from "../Pages/AllDonationReqs";
 import AdminRoute from "./AdminRoute";
 import DonorRoute from "./DonorRoute";
 import { createBrowserRouter } from "react-router";
+import AllDonationReqForVolun from "../Pages/AllDonationReqForVolun";
 
 
 
@@ -92,6 +93,11 @@ export const router = createBrowserRouter([
 
             return { districts, upazilas };
                                 }
+        },
+        {
+            path: 'allDonationReqsForVolunteer',
+            element: <AllDonationReqForVolun></AllDonationReqForVolun>,
+
         },
     ]
   },

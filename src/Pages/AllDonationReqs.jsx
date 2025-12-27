@@ -104,7 +104,7 @@ const handleDeleteReq = (id) =>{
       </tbody>
     </table>
   </div>
-</div>
+      </div>
 
     );
 };
