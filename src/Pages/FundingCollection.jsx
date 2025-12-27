@@ -58,7 +58,7 @@ const FundingCollection = () => {
                     <h3 className='text-2xl lg:text-3xl font-semibold '>Invest in Hope. Support Our Cause.</h3>
 
 
-                <marquee><p className='font-semibold text-yellow-300 text-[15px] animate-ping'>Select any amount from here according to your desire!!    
+                <marquee><p className='font-semibold text-yellow-300'>Select any amount from here according to your desire!!    
                 Select any amount from here according to your desire!!    
                 Select any amount from here according to your desire!!
                 Select any amount from here according to your desire!!</p>
