@@ -52,9 +52,22 @@ const handleDeleteReq = (id) =>{
     
    
   }
-});
+}); }
 
-}
+        const getStatusColor = (status) => {
+        switch (status) {
+        case 'Pending':
+        return 'bg-yellow-500';
+        case 'Inprogress':
+        return 'bg-blue-500';
+        case 'Done':
+        return 'bg-green-600';
+        case 'Canceled':
+        return 'bg-red-600';
+        default:
+        return 'bg-gray-500';
+        }
+        };
 
 
     return (
@@ -92,7 +105,9 @@ const handleDeleteReq = (id) =>{
             <td className="p-2 md:p-3 border text-white border-white text-sm md:text-base">{donation.donationDate}</td>
             <td className="p-2 md:p-3 border text-white border-white text-sm md:text-base">{donation.donationTime}</td>
             <td className="p-2 md:p-3 border text-white border-white text-sm md:text-base">
-              <span className="px-2 py-1 rounded text-white text-xs md:text-sm bg-yellow-500">{donation.status}</span>
+              <span className={`px-2 py-1 rounded text-white ml-5 ${getStatusColor(donation.status)}`}>
+                    {donation.status}
+              </span>
             </td>
             <td className="p-2 md:p-3 border text-red-600 hover:text-red-400 border-white text-sm md:text-base">
               <button onClick={() => handleDeleteReq(donation._id)}>
