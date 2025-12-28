@@ -3,9 +3,9 @@ import UseAuth from '../Hooks/UseAuth';
 import UseAxios from '../Hooks/UseAxios';
 import { useQuery } from '@tanstack/react-query';
 
-const AllDonationReqForVolun = () => {
+const JustDonationRequests = () => {
 
-     const {user} = UseAuth();
+    const {user} = UseAuth();
          const axiosSecure = UseAxios();
          const { data: donations = [], refetch } = useQuery({
         queryKey: ['allDonations'],
@@ -16,16 +16,7 @@ const AllDonationReqForVolun = () => {
       });
 
 
-        const handleStatusChange = async (id, newStatus) => {
-        await axiosSecure.patch(`/donation/${id}`, {
-        status: newStatus
-        });
-        refetch(); 
-        };
-
-
-
-        const getStatusColor = (status) => {
+       const getStatusColor = (status) => {
         switch (status) {
         case 'pending':
         return 'bg-yellow-500';
@@ -42,7 +33,7 @@ const AllDonationReqForVolun = () => {
 
 
     return (
-            <div className="m-5">
+        <div className="m-5">
           <h2 className='text-white font-semibold text-2xl mb-4'>
             All Donation Request: <span className='text-blue-300'>{donations.length}</span>
           </h2>
@@ -59,6 +50,7 @@ const AllDonationReqForVolun = () => {
                   <th className="p-2 md:p-3 border font-semibold text-sm md:text-base">Time</th>
                   <th className="p-2 md:p-3 border font-semibold text-sm md:text-base">Status</th>
                   
+                  
                 </tr>
               </thead>
         
@@ -71,26 +63,12 @@ const AllDonationReqForVolun = () => {
                     <td className="p-2 md:p-3 border text-white border-white text-sm md:text-base">{donation.bloodGroup}</td>
                     <td className="p-2 md:p-3 border text-white border-white text-sm md:text-base">{donation.donationDate}</td>
                     <td className="p-2 md:p-3 border text-white border-white text-sm md:text-base">{donation.donationTime}</td>
-
-                    <td className="p-2 md:p-3 border text-white border-white">
-                    <select
-                    value={donation.status}
-                    onChange={(e) =>
-                        handleStatusChange(donation._id, e.target.value)
-                    }
-                    className="bg-gray-700 text-white px-2 py-1 rounded text-sm"
-                    >
-                    <option value="Pending">Pending</option>
-                    <option value="Inprogress">In Progress</option>
-                    <option value="Done">Done</option>
-                    <option value="Canceled">Canceled</option>
-                    </select>
-
-
+                    <td className="p-2 md:p-3 border text-white border-white text-sm md:text-base">
                     <span className={`px-2 py-1 rounded text-white ml-5 ${getStatusColor(donation.status)}`}>
                     {donation.status}
                     </span>
                     </td>
+                    
 
                    
                   </tr>
@@ -102,4 +80,4 @@ const AllDonationReqForVolun = () => {
     );
 };
 
-export default AllDonationReqForVolun;
+export default JustDonationRequests;

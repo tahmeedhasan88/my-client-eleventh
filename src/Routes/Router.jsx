@@ -17,6 +17,10 @@ import AdminRoute from "./AdminRoute";
 import DonorRoute from "./DonorRoute";
 import { createBrowserRouter } from "react-router";
 import AllDonationReqForVolun from "../Pages/AllDonationReqForVolun";
+import JustDonationRequests from "../Pages/JustDonationRequests";
+import AdminDashBoard from "../DashBoards/AdminDashBoard";
+import DonorDashBoard from "../DashBoards/DonorDashBoard";
+import VolunteerDashBoard from "../DashBoards/VolunteerDashBoard";
 
 
 
@@ -61,7 +65,11 @@ export const router = createBrowserRouter([
         },
         {
             path:'payment-success',
-            element: <PaymentSuccess></PaymentSuccess>
+            element: <PaymentSuccess></PaymentSuccess>,
+        },
+        {
+            path:'just-donation-requests',
+            element: <JustDonationRequests></JustDonationRequests>,
         },
     ]
   },
@@ -97,6 +105,21 @@ export const router = createBrowserRouter([
         {
             path: 'allDonationReqsForVolunteer',
             element: <AllDonationReqForVolun></AllDonationReqForVolun>,
+
+        },
+        {
+            path: 'admin-dashboard',
+            element: <AdminDashBoard></AdminDashBoard>,
+
+        },
+        {
+            path: 'donor-dashboard',
+            element: <DonorDashBoard></DonorDashBoard>,
+
+        },
+        {
+            path: 'volunteer-dashboard',
+            element: <VolunteerDashBoard></VolunteerDashBoard>,
 
         },
     ]
