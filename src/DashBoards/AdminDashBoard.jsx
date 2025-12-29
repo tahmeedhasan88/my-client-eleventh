@@ -230,7 +230,7 @@ const handleDeleteReq = (id) =>{
                 </table>
               </div>
               <div className='flex items-center justify-center'>
-                <Link to=''><button className='px-3 py-1 rounded-[10px] mt-5 bg-green-400 text-white lg:px-6 lg:py-2 font-semibold'>See All</button></Link>
+                <Link to='/dashBoard/allUsers'><button className='px-3 py-1 rounded-[10px] mt-5 bg-green-400 text-white lg:px-6 lg:py-2 font-semibold'>See All</button></Link>
               </div>
         </div>
 {/* -------------User table end------------------ */}
@@ -281,7 +281,7 @@ const handleDeleteReq = (id) =>{
         </table>
       </div>
         <div className='flex items-center justify-center mb-10'>
-        <Link to=''><button className='px-3 py-1 rounded-[10px] mt-5 bg-green-400 text-white lg:px-6 lg:py-2 font-semibold'>See All</button></Link>
+        <Link to='/dashBoard/allDonationReqs'><button className='px-3 py-1 rounded-[10px] mt-5 bg-green-400 text-white lg:px-6 lg:py-2 font-semibold'>See All</button></Link>
         </div>
 </div>
 

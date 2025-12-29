@@ -53,17 +53,19 @@ console.log(role)
       {
         role === 'admin' && (
           <>
-              <li>
-            <NavLink to='/dashBoard/allUsers'><FaUser className='size-5'></FaUser><span className="is-drawer-close:hidden">All Users</span></NavLink>
-             </li>
-
-              <li>
-            <NavLink to='/dashBoard/allDonationReqs'><MdBloodtype className='size-5'></MdBloodtype><span className="is-drawer-close:hidden">All Donation Requests</span></NavLink>
-             </li>
-
-              <li>
+            <li>
             <NavLink to='/dashBoard/admin-dashboard'><MdDashboard className='size-5'></MdDashboard><span className="is-drawer-close:hidden">My Dashboard</span></NavLink>
-             </li>
+            </li>
+
+            <li>
+            <NavLink to='/dashBoard/allUsers'><FaUser className='size-5'></FaUser><span className="is-drawer-close:hidden">All Users</span></NavLink>
+            </li>
+
+            <li>
+            <NavLink to='/dashBoard/allDonationReqs'><MdBloodtype className='size-5'></MdBloodtype><span className="is-drawer-close:hidden">All Donation Requests</span></NavLink>
+            </li>
+
+              
           </>
         )
       }
