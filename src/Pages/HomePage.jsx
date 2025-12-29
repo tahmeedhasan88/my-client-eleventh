@@ -92,7 +92,7 @@ const HomePage = () => {
     <h3 className="text-lg sm:text-xl font-semibold">Blood Bank Details</h3>
 
     <Link
-        to=''
+        to='/blood-bank'
         className="
         mt-2 bg-emerald-500 hover:bg-emerald-600
         text-white px-4 py-1.5
@@ -113,14 +113,12 @@ const HomePage = () => {
     w-full max-w-xs mx-auto
     "
 >
-    {/* Image */}
+   
     <img
     src='/donnersGp.jpg'
     alt='Success Stories'
     className="w-full h-48 sm:h-56 md:h-64 object-cover"
     />
-
-    {/* Overlay */}
     <div
     className="
         absolute bottom-0 left-0 w-full
@@ -131,7 +129,7 @@ const HomePage = () => {
     <h3 className="text-lg sm:text-xl font-semibold">Success Stories</h3>
 
     <Link
-        to=''
+        to='/success-story'
         className="
         mt-2 bg-emerald-500 hover:bg-emerald-600
         text-white px-4 py-1.5
@@ -152,14 +150,12 @@ const HomePage = () => {
     w-full max-w-xs mx-auto
     "
 >
-    {/* Image */}
+
     <img
     src='/Articles.JPG'
     alt='Articles'
     className="w-full h-48 sm:h-56 md:h-64 object-cover"
     />
-
-    {/* Overlay */}
     <div
     className="
         absolute bottom-0 left-0 w-full
@@ -170,7 +166,7 @@ const HomePage = () => {
     <h3 className="text-lg sm:text-xl font-semibold">Articles</h3>
 
     <Link
-        to=''
+        to='/article'
         className="
         mt-2 bg-emerald-500 hover:bg-emerald-600
         text-white px-4 py-1.5

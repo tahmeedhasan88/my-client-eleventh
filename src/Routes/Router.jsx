@@ -19,8 +19,11 @@ import { createBrowserRouter } from "react-router";
 import AllDonationReqForVolun from "../Pages/AllDonationReqForVolun";
 import JustDonationRequests from "../Pages/JustDonationRequests";
 import AdminDashBoard from "../DashBoards/AdminDashBoard";
-import DonorDashBoard from "../DashBoards/DonorDashBoard";
-import VolunteerDashBoard from "../DashBoards/VolunteerDashBoard";
+import VolunteerRoute from "./VolunteerRoute";
+import BloodBank from "../Pages/BloodBank";
+import SuccessStory from "../Pages/SuccessStory";
+import Article from "../Pages/Article";
+
 
 
 
@@ -71,6 +74,18 @@ export const router = createBrowserRouter([
             path:'just-donation-requests',
             element: <JustDonationRequests></JustDonationRequests>,
         },
+        {
+            path:'blood-bank',
+            element: <BloodBank></BloodBank>,
+        },
+        {
+            path:'success-story',
+            element: <SuccessStory></SuccessStory>,
+        },
+        {
+            path:'article',
+            element: <Article></Article>,
+        },
     ]
   },
   {
@@ -104,7 +119,7 @@ export const router = createBrowserRouter([
         },
         {
             path: 'allDonationReqsForVolunteer',
-            element: <AllDonationReqForVolun></AllDonationReqForVolun>,
+            element: <VolunteerRoute><AllDonationReqForVolun></AllDonationReqForVolun></VolunteerRoute>,
 
         },
         {
@@ -112,16 +127,7 @@ export const router = createBrowserRouter([
             element: <AdminRoute><AdminDashBoard></AdminDashBoard></AdminRoute>,
 
         },
-        {
-            path: 'donor-dashboard',
-            element: <DonorDashBoard></DonorDashBoard>,
-
-        },
-        {
-            path: 'volunteer-dashboard',
-            element: <VolunteerDashBoard></VolunteerDashBoard>,
-
-        },
+       
     ]
   },
 ]);
