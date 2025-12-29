@@ -1,7 +1,7 @@
 import React from 'react';
 import { BiSolidDonateBlood } from 'react-icons/bi';
 import { FaUser } from 'react-icons/fa';
-import { MdBloodtype } from 'react-icons/md';
+import { MdBloodtype, MdDashboard } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router';
@@ -59,6 +59,10 @@ console.log(role)
 
               <li>
             <NavLink to='/dashBoard/allDonationReqs'><MdBloodtype className='size-5'></MdBloodtype><span className="is-drawer-close:hidden">All Donation Requests</span></NavLink>
+             </li>
+
+              <li>
+            <NavLink to='/dashBoard/admin-dashboard'><MdDashboard className='size-5'></MdDashboard><span className="is-drawer-close:hidden">My Dashboard</span></NavLink>
              </li>
           </>
         )
